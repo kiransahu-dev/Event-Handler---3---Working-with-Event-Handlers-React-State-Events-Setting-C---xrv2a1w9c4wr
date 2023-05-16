@@ -1,32 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../styles/App.css';
 const App = () => {
 
-  const [text, setText] = useState("");
-  const [num, setNum] = useState("");
-
-  const handleInput = (event) => {
-    if (event.target.id === "text-input") {
-      setText(`${text}` + event.target.value);
-      console.log(`> Input in #text-input is ${text}`);
-    } else {
-      setNum(`${num}` + event.target.value,);
-      console.log(`> Input in #num-input is ${num}`);
-    }
+  const handleInput = (event) =>{
+   // use console.log
+   console.log(`Input in #${event.target.id} is ${event.target.value}`);
   }
 
   // do not change id of input elements
   return (
     <div id="main">
       <label htmlFor='text-input'>Text Input:- </label>
-      <input id="text-input" type={'text'} onChange={handleInput} />
+      <input onChange={handleInput} id="text-input" type={'text'} />
 
-      <br />
-      <br />
+      <br/>
+      <br/>
 
       <label htmlFor='num-input'>Number input</label>
-      <input id="num-input" type={'number'} onChange={handleInput} />
-      <br />
+      <input onChange={handleInput} id="num-input"  type={'number'} />
+      <br/>
     </div>
   )
 }
